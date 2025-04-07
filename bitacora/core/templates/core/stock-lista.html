@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Stock Disponible</h2>
+<a href="{% url 'crear_stock' %}">Agregar nuevo producto</a>
+<ul>
+  {% for stock in stocks %}
+    <li>
+      {{ stock.nombre }} - {{ stock.descripcion }} - Cantidad: {{ stock.cantidad }}
+      <a href="{% url 'editar_stock' stock.pk %}">Editar</a>
+      <a href="{% url 'eliminar_stock' stock.pk %}">Eliminar</a>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

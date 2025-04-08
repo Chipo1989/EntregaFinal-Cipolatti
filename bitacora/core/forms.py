@@ -5,6 +5,7 @@ class TareaForm(forms.ModelForm):
     class Meta:
         model = Tarea
         fields = ['titulo', 'descripcion', 'completada']
+        
 
 class StockForm(forms.ModelForm):
     class Meta:

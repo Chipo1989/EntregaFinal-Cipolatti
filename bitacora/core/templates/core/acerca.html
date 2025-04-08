@@ -1,8 +1,21 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Acerca de...{% endblock %}
 
 {% block content %}
-<h2>Sobre mí</h2>
-<p>Tu información personal aquí.</p>
+<h2>Giancarlo Cipolatti</h2>
+<img src="{% static 'core/CipolattiGiancarlo.jpg' %}" alt="Imagen principal" style="width: 30%; max-width: 200px;">
+<div style="text-align: justify; text-indent: 1em; max-width: 500px; line-height: 1.6;">
+    <p>Soy Ingeniero electrónico de origen santiagueño, que vive en La Rioja hace varios años. 
+    Como mis gustos estuvieron más relacionados a la informática, elegí intentar programación y me decidí por un curso de Python para arrancar.</p> 
+    <p>Siempre trabajé en el área de mantenimiento de fábricas y ahora trabajo en una clínica privada, en el mismo sector. 
+    Eso me motivó a armar este sitio, para poder tener un mejor control de las tareas que se realizan día a día, 
+    así como también, el control del stock de los insumos que empleamos en las mismas. 
+    Espero le pueda ser útil al que se encuentra en la misma línea de acción. La idea es ir mejorandolo de a poco. Muchas gracias!</p>
+  </div>
+  <br>
+  <p><strong>Puedes visitar mi perfil de LinkedIn aquí:</strong> 
+    <a href="https://www.linkedin.com/in/giancarlo-cipolatti-85626326/" target="_blank">Mi LinkedIn</a>
+  </p>
 {% endblock %}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Bitácora del mantenimiento{% endblock %}</title>
-    
+                
 </head>
 <body>
     <header>
@@ -24,8 +24,9 @@
                 <a href="{% url 'register' %}">Registrarse</a>
             {% endif %}
         </nav>
+        
     </header>
-
+    
     <main>
         {% block content %}{% endblock %}
     </main>

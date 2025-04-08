@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Inicio - Bitácora del mantenimiento{% endblock %}
 
 {% block content %}
-<h1>Bitácora del mantenimiento</h1>
+<br>
+<h1 style="text-align: center;">Bitácora del Mantenimiento</h1>
+<img src="{% static 'core/logo_eri.png' %}" alt="Imagen principal" style="width: 80%; display: block; margin: auto; max-width: 500px;">
 {% endblock %}

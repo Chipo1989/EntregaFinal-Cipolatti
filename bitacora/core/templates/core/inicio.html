@@ -4,7 +4,8 @@
 {% block title %}Inicio - Bitácora del mantenimiento{% endblock %}
 
 {% block content %}
-    <br>
-    <h1 style="text-align: center;">Bitácora del Mantenimiento</h1>
-    <img src="{% static 'core/logo_eri.png' %}" alt="Imagen principal" style="width: 80%; display: block; margin: auto; max-width: 500px;">
+    <div class="d-flex flex-column justify-content-center align-items-center text-center" style="min-height: calc(100vh - 120px);">
+        <h1 class="mb-5" style="text-align: center;">Bitácora del Mantenimiento</h1>
+        <img src="{% static 'core/logo_eri.png' %}" alt="Imagen principal" class="img-fluid" style="max-width: 600px;">
+    </div>
 {% endblock %}

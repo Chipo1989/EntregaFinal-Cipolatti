@@ -3,41 +3,41 @@
 {% block title %}Stock{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
-    <h2 class="text-center mb-4">Stock Disponible</h2>
-    
-    <div class="mb-3 text-end">
-        <a href="{% url 'crear_stock' %}" class="btn btn-success">Agregar nuevo producto</a>
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Stock Disponible</h2>
+
+        <div class="mb-3 text-left">
+            <a href="{% url 'crear_stock' %}" class="btn btn-success">Agregar nuevo producto</a>
+        </div>
+        <br>
+        {% if stocks %}
+            <table class="table table-striped table-bordered table-hover align-middle">
+                <thead class="table-dark text-center">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Cantidad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for stock in stocks %}
+                        <tr>
+                            <td class="text-center">{{ stock.nombre }}</td>
+                            <td>{{ stock.descripcion }}</td>
+                            <td class="text-center">{{ stock.cantidad }}</td>
+                            <td class="text-center">
+                                <a href="{% url 'editar_stock' stock.id %}" class="btn btn-sm btn-warning">Editar</a>
+                                <a href="{% url 'eliminar_stock' stock.id %}" class="btn btn-sm btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <div class="alert alert-info text-center">
+                <strong>No hay stock registrado por el momento.</strong>
+            </div>
+        {% endif %}
     </div>
-    <br>
-    {% if stocks %}
-    <table class="table table-striped table-bordered">
-        <thead class="table-dark">
-            <tr>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Cantidad</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for stock in stocks %}
-            <tr>
-                <td>{{ stock.nombre }}</td>
-                <td>{{ stock.descripcion }}</td>
-                <td>{{ stock.cantidad }}</td>
-                <td>
-                    <a href="{% url 'editar_stock' stock.id %}" class="btn btn-sm btn-warning">Editar</a>
-                    <a href="{% url 'eliminar_stock' stock.id %}" class="btn btn-sm btn-danger">Eliminar</a>
-                </td>
-            </tr>   
-            {% endfor %}
-        </tbody>
-    </table>
-    {% else %}
-    <div class="alert alert-info text-center">
-        <strong>No hay stock registrado por el momento.</strong>
-    </div>
-    {% endif %}
-</div>
 {% endblock %}

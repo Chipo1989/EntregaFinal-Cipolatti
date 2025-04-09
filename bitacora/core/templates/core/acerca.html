@@ -4,18 +4,30 @@
 {% block title %}Acerca de...{% endblock %}
 
 {% block content %}
-<h2>Giancarlo Cipolatti</h2>
-<img src="{% static 'core/CipolattiGiancarlo.jpg' %}" alt="Imagen principal" style="width: 30%; max-width: 200px;">
-<div style="text-align: justify; text-indent: 1em; max-width: 500px; line-height: 1.6;">
-    <p>Soy Ingeniero electrónico de origen santiagueño, que vive en La Rioja hace varios años. 
-    Como mis gustos estuvieron más relacionados a la informática, elegí intentar programación y me decidí por un curso de Python para arrancar.</p> 
-    <p>Siempre trabajé en el área de mantenimiento de fábricas y ahora trabajo en una clínica privada, en el mismo sector. 
-    Eso me motivó a armar este sitio, para poder tener un mejor control de las tareas que se realizan día a día, 
-    así como también, el control del stock de los insumos que empleamos en las mismas. 
-    Espero le pueda ser útil al que se encuentra en la misma línea de acción. La idea es ir mejorandolo de a poco. Muchas gracias!</p>
-  </div>
-  <br>
-  <p><strong>Puedes visitar mi perfil de LinkedIn aquí:</strong> 
+<div class="container mt-5">
+    <div class="card shadow p-4">
+        <h2 class="text-center mb-4">Giancarlo Cipolatti</h2>
+        <img src="{% static 'core/CipolattiGiancarlo.jpg' %}" class="d-block mx-auto img-fluid" alt="Imagen principal" style="width: 30%; max-width: 200px;">
+        <br>
+        <p class="text-justify" style="text-indent: 2em; line-height: 1.6;">
+            Soy <strong>Ingeniero electrónico</strong> de origen santiagueño y vivo en La Rioja hace varios años.
+        </p>
+        <p class="text-justify" style="text-indent: 2em; line-height: 1.6;">
+            Como mis gustos estuvieron más relacionados a la informática, decidí tomar el curso de Python.
+        </p>
+        <p class="text-justify" style="text-indent: 2em; line-height: 1.6;">
+            Siempre trabajé en el área de mantenimiento de fábricas y actualmente trabajo en una clínica privada, en el mismo sector.
+        </p>
+        <p class="text-justify" style="text-indent: 2em; line-height: 1.6;">
+            Eso me motivó a crear este sitio, para tener un mejor control de las tareas que se realizan día a día, así como también el control del stock de insumos.
+        </p>
+        <p class="text-justify" style="text-indent: 2em; line-height: 1.6;">
+            Espero que le sea útil a quienes se encuentren en la misma línea de acción. <strong>¡Muchas gracias!</strong>
+        </p>
+    </div>
+</div>
+<br>
+  <p><strong>Puedes visitar mi perfil de LinkedIn aquí:</strong>
     <a href="https://www.linkedin.com/in/giancarlo-cipolatti-85626326/" target="_blank">Mi LinkedIn</a>
   </p>
 {% endblock %}

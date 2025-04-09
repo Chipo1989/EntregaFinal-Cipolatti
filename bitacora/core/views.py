@@ -10,14 +10,6 @@ def inicio(request):
 def acerca(request):
     return render(request, 'acerca.html')
 
-@login_required
-def lista_tareas(request):
-    return render(request, 'tareas-lista.html')
-
-@login_required
-def lista_stock(request):
-    return render(request, 'stock-lista.html')
-
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)

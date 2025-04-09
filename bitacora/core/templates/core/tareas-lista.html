@@ -1,14 +1,44 @@
 {% extends 'base.html' %}
+{% block title %}Tareas{% endblock %}
+
 {% block content %}
-<h2>Mis Tareas</h2>
-<a href="{% url 'crear_tarea' %}">Crear nueva tarea</a>
-<ul>
-  {% for tarea in tareas %}
-    <li>
-      {{ tarea.titulo }} - {{ tarea.descripcion }} - {% if tarea.completada %}✅{% else %}❌{% endif %}
-      <a href="{% url 'editar_tarea' tarea.pk %}">Editar</a>
-      <a href="{% url 'eliminar_tarea' tarea.pk %}">Eliminar</a>
-    </li>
-  {% endfor %}
-</ul>
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Listado de Tareas</h2>
+    
+    <div class="mb-3 text-end">
+        <a href="{% url 'crear_tarea' %}" class="btn btn-success">Crear nueva tarea</a>
+    </div>
+    <br>
+    {% if tareas %}
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>¿Completada?</th>
+                <th>Fecha de creación</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tarea in tareas %}
+            <tr>
+                <td>{{ tarea.titulo }}</td>
+                <td>{{ tarea.descripcion }}</td>
+                <td>{{ tarea.completada|yesno:"Sí,No" }}</td>
+                <td>{{ tarea.fecha_creacion|date:"d/m/Y H:i" }}</td>
+                <td>
+                    <a href="{% url 'editar_tarea' tarea.id %}" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="{% url 'eliminar_tarea' tarea.id %}" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>  
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <div class="alert alert-info text-center">
+        <strong>No hay tareas registradas.</strong>
+    </div>
+    {% endif %}
+</div>
 {% endblock %}
